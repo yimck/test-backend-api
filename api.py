@@ -13,6 +13,11 @@ class Item(BaseModel):
 def read_root():
     return {"Hello": "World"}
 
+@app.get("/items")
+def read_items():
+    return {"World": "Hello"}
+
+
 @app.post("/items")
 def create_item(item_id: str, item: Item):
     temp_tuple = item.name, item.ingredients, item.price
