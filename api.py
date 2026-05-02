@@ -19,7 +19,7 @@ def read_items():
 
 
 @app.post("/items")
-def create_item(item_id: str, item: Item):
+def create_item(item: Item):
     temp_tuple = item.name, item.ingredients, item.price
     # insert(temp_tuple)
     return {"item": temp_tuple}
